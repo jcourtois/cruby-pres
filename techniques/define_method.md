@@ -57,3 +57,10 @@ def my_class_maker args={}
   end
 end
 ```
+
+!SLIDE bullets incremental
+
+# :define_method catches
+
+- If you have a bug, it is more difficult to locate the problem.
+- Messages and stack traces are less clear.
