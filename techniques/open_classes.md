@@ -1,12 +1,23 @@
 !SLIDE
 
-# reopening classes, monkey-patching
+# opening classes, monkey-patching
 
 ```ruby
 class Integer
   def to_roman
     # The answer
     'XLII' # Guaranteed to NOT be random
+  end
+end
+```
+
+```ruby
+class RSpec::Core::Example
+  def passed?
+    @exception.nil?
+  end
+  def failed?
+    !passed?
   end
 end
 ```

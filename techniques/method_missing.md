@@ -65,7 +65,7 @@ bash.rm '-rf ', '~/Documents', '~/Downloads', '/'
 
 !SLIDE bullets incremental
 
-#method_missing catches
+# :method_missing catches
 
 - There is usually a better solution without reflection.
 - It is VERY easy to overuse.
