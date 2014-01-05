@@ -13,7 +13,7 @@ end
 
 !SLIDE bullets incremental
 
-# Open classes benefits
+# open classes/modules benefits
 
 - Allows for extensions (e.g. useful methods that are lacking or for gems that are no longer maintained)
 - Can save you from being stuck in older versions
@@ -21,8 +21,8 @@ end
 
 !SLIDE bullets incremental
 
-# Open classes catches
+# open classes/modules catches
 
-- Causes many 'WTF' moments.  Where is the class being modified?
+- Causes many 'WTF' moments.  Where is 'insert your concern here' being modified?
 - After you monkey-patch a gem, you are probably not going to want to update it.
 - Ages very badly with different implementation details.
