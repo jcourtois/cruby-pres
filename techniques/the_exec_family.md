@@ -1,6 +1,6 @@
 !SLIDE bullet incremental
 
-# class_exec, module_exec, instance_exec*
+# class_exec, module_exec, instance_exec
 
 - This family allows you to execute blocks of code within the receiver.
 - In many cases, the *_exec family is a great alternative to the eval family.
@@ -8,7 +8,7 @@
 
 !SLIDE comparison
 
-# difference between :send, the :*evals, and the :*_execs
+# difference between :send, the :\*evals, and the :\*_execs
 
 ## :execs
 
