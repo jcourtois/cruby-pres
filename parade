@@ -1,0 +1,14 @@
+title "SO META: The Joys and Sorrows of Metaprogramming"
+
+description "A talk given by Hugo Corbucci and James Courtois on Jan 7 2014"
+
+theme "minimal"
+resources "stylesheets"
+
+section "introduction" do
+  slides "intro.md"
+end
+
+section "techniques"
+
+slides "conclusion.md"

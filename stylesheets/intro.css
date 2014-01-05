@@ -1,0 +1,55 @@
+#title-slide {
+	text-align: left;
+}
+
+#sponsors {
+	color: #FFFFFF;
+	padding: 80px 0px 0px 20px;
+	background-color: #8d1413;
+	width: 270px;
+	height: 1000px;
+	float: left;
+}
+
+#tw-logo img {
+	width: 240px;
+	padding: 30px 0px;
+}
+
+#cr-logo img {
+	width: 180px;
+	padding: 30px 0px;
+}
+
+
+#main-block {
+	display: inline-block;
+}
+
+#date {
+	height: 40px;
+	width: 250px;
+	color: white;
+	background-color: black;
+	margin: 30px 0px;
+	padding: 15px 0px 0px 40px;
+	font-weight: 300;
+	font-size: 25px;
+}
+
+#main-title {
+	font-size: 68px;
+}
+
+#title {
+	width: 300px;
+	margin: 50px;
+	font-weight: 100;
+	font-size: 52px;
+}
+
+#authors {
+	margin: 100px 50px;
+	font-weight: 100;
+	font-size: 30px;
+}
