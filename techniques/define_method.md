@@ -26,7 +26,7 @@ Person.new.say_hello # => "hello"
 ```ruby
 module RspecErrorReport
   define_method :log_information_on do |object|
-    example[:exceptional_object] = object
+    example.metadata[:exceptional_object] = object
   end
 end
 ```

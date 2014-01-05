@@ -1,3 +1,20 @@
+
+!SLIDE bullets
+
+# around alias
+
+Man-in-the-middle method calls!  Mix it in and they will probably never know the difference.  :)
+
+```ruby
+class CookieJar
+  alias :old_cookie :cookie
+  def cookie
+    alert :mom
+    old_cookie
+  end
+end
+```
+
 !SLIDE bullets
 
 # around alias
@@ -22,6 +39,7 @@ module DSL
   end
 end
 ```
+
 
 !SLIDE bullets incremental
 
