@@ -2,7 +2,7 @@
 
 # around alias
 
-- Man-in-the-middle method calls!  :)
+Man-in-the-middle method calls!  Mix it in and they will probably never know the difference.  :)
 
 ```ruby
 module DSL
@@ -22,3 +22,45 @@ module DSL
   end
 end
 ```
+
+!SLIDE bullets incremental
+
+# around alias benefits
+
+- Great for logging method calls
+- Also permits for extensions
+- Handling of previously unsupported edge cases
+
+!SLIDE bullets
+
+# around alias benefits
+
+- Previously unsupported edge cases
+
+```ruby
+# this is a patch to accommodate content-editable elements
+class Capybara::Selenium::Node
+  alias :old_set :set
+  def set value
+    if native.attribute('isContentEditable')
+      #ensure we are focused on the element
+      script = <<-JS
+        var range = document.createRange();
+        range.selectNodeContents(arguments[0]);
+        window.getSelection().addRange(range);
+      JS
+      driver.browser.execute_script script, native
+      native.send_keys(value.to_s)
+    else
+      old_set value
+    end
+  end
+end
+```
+
+!SLIDE bullets incremental
+
+# around alias cons
+
+- Added dimension of misdirection can be confusing to maintain.
+- If used as in the previous example, you are going to want to proceed gingerly before updating any affected libraries.
