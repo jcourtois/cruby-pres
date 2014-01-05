@@ -1,14 +1,9 @@
-!SLIDE content-with-caption
+!SLIDE bullets
 
 # :send
 
-## Section 1
-
 ## Explanation
-
-* Easy
-* To
-* Understand
+Invokes the method identified by :symbol, passing it any additional arguments specified.
 
 ## Example
 
