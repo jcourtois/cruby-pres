@@ -46,7 +46,8 @@ end
 # around alias benefits
 
 - Great for logging method calls
-- Also permits for extensions
+- Also turning method calls into hooks
+- Also useful for functionality extensions
 - Handling of previously unsupported edge cases
 
 !SLIDE bullets
