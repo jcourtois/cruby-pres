@@ -1,7 +1,7 @@
 !SLIDE #title-slide
 
 <div id="main-block">
-  <div id="date">January 6, 2014</div>
+  <div id="date">January 7, 2014</div>
   <div id="title">
     <span id="main-title">SO META:</span>
     <span id="subtitle">Joys and Sorrows of Metaprogramming</span>
