@@ -10,5 +10,3 @@ section "introduction" do
 end
 
 section "techniques"
-
-slides "conclusion.md"
