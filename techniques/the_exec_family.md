@@ -18,7 +18,7 @@
 
 ## :evals
 
-- Executes a String of ruby code *or* a block of ruby code within the the receiver
+- Executes a String of ruby code *or* a block of ruby code within the receiver
 - Has access to private attributes and methods
 - "Potentially dangerous" (will not be able to process tainted input at $SAFE>0)
 

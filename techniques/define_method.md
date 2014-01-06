@@ -19,44 +19,46 @@ Person.new.say_hello # => "hello"
 
 !SLIDE bullets
 
-# :define_method uses
-
-- Using define_method will maintain flat scope, e.g. when writing mixins.
-
-```ruby
-module RspecErrorReport
-  define_method :log_information_on do |object|
-    example.metadata[:exceptional_object] = object
-  end
-end
-```
+# anonymous class objects
+aka DIE inheritence
 
 ```ruby
-include 'RspecErrorReport'
-describe 'AAA' do
-  it 'aaa' do
-    begin
-      obj.foo
-    rescue
-      log_information_on obj
+class ClasslessObject
+  def self.new(attributes)
+    clazz = Class.new
+      attributes.keys.each do |key|
+      value = attributes[key]
+      callable = value
+      if !value.respond_to?(:call)
+        callable = lambda { || value }
+      end
+      clazz.send(:define_method,key,callable)
     end
+    clazz.new
   end
 end
 ```
+
+!SLIDE
+
+object = ClasslessObject.new(
+  :value_per_unit => 10,
+  :quantity => 3,
+  :total => lambda{||value_per_unit*quantity})
+object.methods - Object.new.methods
+ => ["value_per_unit", "quantity", "total"]
+
+other = ClasslessObject.new(
+  :value_per_unit => 15,
+  :total => lambda {|number| value_per_unit * number})
+other.methods - Object.new.methods
+ => ["value_per_unit", "total"]
 
 !SLIDE bullets incremental
 
 # :define_method other uses
 
 - 'Grow' objects.
-
-```ruby
-def my_class_maker args={}
-  Class.new do
-
-  end
-end
-```
 
 !SLIDE bullets incremental
 
