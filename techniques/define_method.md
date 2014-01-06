@@ -41,6 +41,8 @@ end
 
 !SLIDE
 
+# objects like javascript!
+```ruby
 object = ClasslessObject.new(
   :value_per_unit => 10,
   :quantity => 3,
@@ -53,6 +55,7 @@ other = ClasslessObject.new(
   :total => lambda {|number| value_per_unit * number})
 other.methods - Object.new.methods
  => ["value_per_unit", "total"]
+```
 
 !SLIDE bullets incremental
 
