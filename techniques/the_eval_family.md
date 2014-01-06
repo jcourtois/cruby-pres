@@ -66,4 +66,6 @@ https://olabini.com/blog/2008/01/ruby-antipattern-using-eval-without-positioning
 
 # eval family summary
 
-- Even then, many programmers avoid :eval.
+- Even then, many programmers avoid the :eval family.
+- The :exec family and :send offer more reliable ways of achieving similar ends.
+- But if you're going to ... (1) do it safely and (2) add positioning information to your :eval calls!

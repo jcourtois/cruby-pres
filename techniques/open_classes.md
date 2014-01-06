@@ -37,3 +37,49 @@ end
 - Causes many 'WTF' moments.  Where is 'insert your concern here' being modified?
 - After you monkey-patch a gem, you are probably not going to want to update it.
 - Ages very badly with different implementation details.
+- Involuntary monkeypatching.  \*shudder\*
+
+!SLIDE bullet incremental
+
+# but... how do we monkeypatch the right way?
+
+- \*crickets\*
+
+!SLIDE bullets incremental
+
+# Look before you land!
+
+- Say you want to define *foo* in *obj*
+- Ruby has a bunch of great methods like object#respond_to?, module#instance_methods, and module#private_instance_methods.
+- These can be used to suss out whether obj.foo is already defined.
+- If it's not, only *then* should you feel comfortable monkeypatching your own foo in.
+- If it is already defined: maybe you'd like to try around alias?
+
+!SLIDE bullets
+
+# Mixin your monkeypatches!
+
+What is the difference between:
+
+```ruby
+class String
+  def palindrome?
+    self == self.reverse
+  end
+end
+```
+
+```ruby
+module JimmysPalindromeFinder
+  def palindrome?
+    return false unless self.respond_to? :reverse
+    self == self.reverse
+  end
+end
+
+class String
+  include JimmysPalindromeFinder
+end
+```
+
+
