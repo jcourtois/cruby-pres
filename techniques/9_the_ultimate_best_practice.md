@@ -10,6 +10,8 @@
 
 !SLIDE bullets incremental
 
+# the ultimate best practice \o/
+
 - In the previous class factory example, I can test:
 - That my class factory is capable of making 'arbitrary' classes with 'arbitrary' attributes.
 - That my class factory will not inadvertantly monkeypatch or overwrite a pre-existing class (and hopefully it notifies me if I try to do so)
