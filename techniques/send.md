@@ -2,10 +2,7 @@
 
 # :send
 
-## Explanation
-Invokes the method identified by :symbol, passing it any additional arguments specified.
-
-## Example
+- Invokes the method identified by :symbol, passing it any additional arguments specified.
 
 ```ruby
 class Trip < ActiveRecord::Base  # Crappy backport of 'where' to rails 2.3
