@@ -43,3 +43,20 @@ class Baddies < BasicObject
   end
 end
 ```
+
+!SLIDE
+
+# the result
+
+```ruby
+
+Baddies.thugs hp:20, display_name:"THG", attack: crowbar
+Baddies.artists hp:15, display_name:"ART", attack: paint_toss
+Baddies.meanies hp:28, display_name:"MEA", attack: insult
+Baddies.luddites hp:26, display_name:"LUD", attack: primitive_means
+
+level.fill_with([Thug, Artist, Meanie, Luddite])
+
+# now we can fill our level with instances of thugs, artists,
+# meanies, and luddites
+```
