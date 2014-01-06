@@ -82,4 +82,48 @@ class String
 end
 ```
 
+!SLIDE
 
+# the first case:
+```ruby
+class String
+  def palindrome?
+    self == self.reverse
+  end
+end
+```
+
+```ruby
+String.ancestors # => [String, Comparable, Object, Kernel, BasicObject]
+```
+
+!SLIDE
+
+# the second:
+
+```ruby
+module JimmysPalindromeFinder
+  def palindrome?
+    return false unless self.respond_to? :reverse
+    self == self.reverse
+  end
+end
+
+class String
+  include JimmysPalindromeFinder
+end
+```
+
+```ruby
+String.ancestors
+# => [String, JimmysPalindromeFinder, Comparable, Object, Kernel, BasicObject]
+```
+
+!SLIDE bullets incremental
+
+# takeaway
+
+- It is possible to be responsible with monkeypatching!
+- It's important to be prudent.  Look before you patch!
+- Transparency is another important goal.  Prefer mixins to simple patches.
+- Be careful.  And fix the versions of your gems in your Gemfile!
