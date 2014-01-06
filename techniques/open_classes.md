@@ -47,7 +47,7 @@ end
 
 !SLIDE bullets incremental
 
-# Look before you land!
+# look before you land!
 
 - Say you want to define *foo* in *obj*
 - Ruby has a bunch of great methods like object#respond_to?, module#instance_methods, and module#private_instance_methods.
@@ -57,7 +57,7 @@ end
 
 !SLIDE bullets
 
-# Mixin your monkeypatches!
+# mixin your monkeypatches!
 
 What is the difference between:
 

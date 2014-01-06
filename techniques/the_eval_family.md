@@ -36,13 +36,13 @@
 - Make sure external inputs are marked tainted, then sanitized before they are trusted.
 - Object#taint, Object#tainted?, Object#untaint are methods built just for this purpose.
 - Avoid :evaling code that you did not write.  It's just prudent.
-- But if you must ...
+- But if you must use the eval family...
 
 !SLIDE
 
 # eval_family best practice:
 
-*Use eval with positioning information :)*
+*Use the eval family with positioning information :)*
 
 You will get a better stack trace in the case of an exception.
 

@@ -61,7 +61,9 @@ other.methods - Object.new.methods
 
 # :define_method other uses
 
-- 'Grow' objects.
+- Grow objects.
+- We'll explore this later with the class factory.
+- Flat scope with closures.  (This isn't really within the scope of this talk)
 
 !SLIDE bullets incremental
 

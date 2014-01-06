@@ -10,13 +10,13 @@
 
 # difference between :send, the :\*evals, and the :\*_execs
 
-## :execs
+## :\*_execs
 
 - Executes a block of ruby code within the reciever
 - Has access to private attributes and methods
 - Not "potentially dangerous" (will process tainted input at $SAFE>0)
 
-## :evals
+## :\*evals
 
 - Executes a String of ruby code *or* a block of ruby code within the receiver
 - Has access to private attributes and methods
