@@ -31,9 +31,6 @@ class MyCleanRoom
 end
 ```
 
-
-
-
 !SLIDE
 
 # :method_missing
@@ -55,7 +52,7 @@ class TimeoutWrapper < BasicObject
 end
 
 et = ExtraTerrestrial.new
-patient_et = TimeoutWrapper.new(50, et)
+patient_et = TimeoutWrapper.new(5, et)
 patient_et.phone_home # will invoke et#phone_home method for 5 seconds
 ```
 
