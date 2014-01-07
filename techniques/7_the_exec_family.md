@@ -4,7 +4,7 @@
 
 - This family allows you to execute blocks of code within the receiver.
 - In many cases, the *_exec family is a great alternative to the eval family.
-- While Kernal.eval is a member of the eval family, Kernal.exec is *not* a member of the exec family.
+- While Kernel.eval is a member of the eval family, Kernel.exec is *not* a member of the exec family.
 
 !SLIDE comparison
 
