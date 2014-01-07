@@ -57,6 +57,26 @@ end
 
 !SLIDE bullets
 
+# use self-depreciating extensions
+
+```ruby
+def self.included(klass)
+  klass.class_eval do
+    alias_method_chain :stub, :save_original
+    alias_method_chain :unstub, :restore_original
+  end
+end
+
+def should_intercept?
+  RUBY_VERSION < '1.9' && self.class == Mocha::ClassMethod && \
+                                      mocha_will_remove_method?
+end
+```
+
+- Mocha 0.13.3 has a bug with ruby 1.8.7, so we wrote an extension that will not do anything if we are running ruby 1.9 or above.
+
+!SLIDE bullets
+
 # mixin your monkeypatches!
 
 What is the difference between:
@@ -167,11 +187,12 @@ end
 
 # james' takeaway
 
-- It is possible to be responsible with monkeypatching!
+- It is possible to be responsible with monkeypatching
 - It's important to be prudent.  Look before you patch!
-- Transparency is another important goal.  Prefer mixins to simple patches.
-- Core ruby classes are not a very good target.
-- Be careful.  And fix the versions of your gems in your Gemfile!
+- Transparency is another important goal.  Prefer mixins to simple patches
+- Core ruby classes are not a very good target
+- Try self-depreciating patches
+- Be careful.  And fix the versions of your gems in your Gemfile
 
 !SLIDE bullets incremental
 
