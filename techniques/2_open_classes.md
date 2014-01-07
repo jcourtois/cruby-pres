@@ -57,7 +57,7 @@ end
 
 !SLIDE bullets
 
-# use self-depreciating extensions
+# use self-deprecating extensions
 
 ```ruby
 def self.included(klass)
@@ -191,7 +191,7 @@ end
 - It's important to be prudent.  Look before you patch!
 - Transparency is another important goal.  Prefer mixins to simple patches
 - Core ruby classes are not a very good target
-- Try self-depreciating patches
+- Try self-deprecating patches
 - Be careful.  And fix the versions of your gems in your Gemfile
 
 !SLIDE bullets incremental

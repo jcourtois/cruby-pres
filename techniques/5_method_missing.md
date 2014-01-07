@@ -56,6 +56,30 @@ patient_et = TimeoutWrapper.new(5, et)
 patient_et.phone_home # will invoke et#phone_home method for 5 seconds
 ```
 
+!SLIDE bullets
+
+# another timeout wrapper, this one w/ an interesting story
+
+```ruby
+class TimeBoundProxy
+  include Benchmarking
+  positional_initializer :target, :timeout
+
+  def method_missing(a_method, *args, &block)
+    endpoint_url = @target.endpoint_url if @target.respond_to? :endpoint_url
+    measure_and_log("#{endpoint_url}:#{a_method}") do
+      SystemTimer.timeout_after(@timeout) do
+        @target.send a_method, *args, &block
+      end
+    end
+  end
+end
+```
+
+aside: see "Reliable Ruby timeouts with System Timer:
+Do not blindly trust timeout.rb..." by Philippe Hanrigou
+http://ph7spot.com/musings/system-timer
+
 !SLIDE bullets incremental
 
 #:method_missing benefits
@@ -66,7 +90,7 @@ patient_et.phone_home # will invoke et#phone_home method for 5 seconds
 
 !SLIDE
 
-#:method_missing poly-language interface
+#:method_missing dsl-language interface
 
 ```ruby
 class BashProxy < BasicObject
@@ -83,7 +107,7 @@ end
 
 bash = BashProxy.new("Admin", "admin")
 
-bash.rm '-rf ', '~/Documents', '~/Downloads', '/'
+bash.rm '-rf', '~/Documents', '~/Downloads', '/'
 ```
 
 !SLIDE bullets incremental
