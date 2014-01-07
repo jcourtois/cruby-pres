@@ -57,9 +57,6 @@ patient_et.phone_home # will invoke et#phone_home method for 5 seconds
 
 ```ruby
 class TimeBoundProxy
-  include Benchmarking
-  positional_initializer :target, :timeout
-
   def method_missing(a_method, *args, &block)
     endpoint_url = @target.endpoint_url if @target.respond_to? :endpoint_url
     measure_and_log("#{endpoint_url}:#{a_method}") do

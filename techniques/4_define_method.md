@@ -59,26 +59,6 @@ other.methods - Object.new.methods
 
 !SLIDE bullets incremental
 
-A TW project uses this code to dispatch events to different types of listeners.
-
-```ruby
-DISPATCHERS = [ ApplicationEventDispatcher.... ]
-
-  EVENTS.each do |event|
-    (class << self; self; end).instance_eval do
-      responding_dispatchers = DISPATCHERS.select { |dispatcher| dispatcher.respond_to? event }
-      define_method event do |*args|
-        responding_dispatchers.each do |dispatcher|
-          dispatcher.send event, *args
-        end
-      end if not method_defined?(event)
-    end
-  end
-```
-
-
-!SLIDE bullets incremental
-
 # :define_method other uses
 
 - Grow objects.

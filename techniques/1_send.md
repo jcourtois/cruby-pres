@@ -21,8 +21,6 @@ endTrip.where(:origin => 'ORD', :destination => 'SFO')
 
 - Allows for dynamic method invokation.
 
-Strategy pattern
-
 ```ruby
 class Taxi
   def calculate_fare_for(distance)
@@ -36,8 +34,6 @@ end
 # :send benefits
 
 - Allows for dynamic method invokation.
-
-Command pattern
 
 ```ruby
 class Image
@@ -67,3 +63,4 @@ different_kitty = kitty2.execute_method_sequence ['h_flip', 'rotate_90']
 - Difficult to determine which methods need to exist for :send to work
 - Difficult to follow the code path; you may end up debugging more often.  :(
 - When :send is invoked with user input, may cause security issues.
+- Difficult to refactor!
