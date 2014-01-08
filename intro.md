@@ -23,3 +23,6 @@
 - Scary and Good: people begin to see the value of meta-programming but are still uncomfortable with using it.
 - Easy and Good: as people get comfortable they begin to use it too much, which can complicate the code-base.
 - Easy and Bad: people are wary of meta-programming and realize that it's very useful in small doses.
+
+Credit: Martin Fowler, "Ruby at ThoughtWorks"
+http://martinfowler.com/articles/rubyAtThoughtWorks.html
