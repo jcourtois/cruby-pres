@@ -81,9 +81,9 @@ end
 # ... /lib/active_record/relation/finder_methods.rb
 ```
 
-- When we upgraded to rails 3, we started seeing MissingAttribute exceptions whenvever we used joins.
+- When we upgraded to rails 3, we started seeing MissingAttribute exceptions when we used joins.
 - This was because rails 3 was using Hash[] syntax to initialize models from query results.
-- Also, note that this "to_h" method wasn't named very well.
+- Also, note that :to_hash wasn't named well.
 
 !SLIDE bullets incremental
 
@@ -94,10 +94,12 @@ end
 
 !SLIDE bullets incremental
 
-# it's not just your best practices.  it's also a matter of those used in the gems in your projects.
+# it's not just your best practices.
+it's also a matter of those used in the gems in your projects.
 
 ## hypothetical situation1:
-- "We start using this gem, we're not aware that it's overriding any core ruby functionality and we end up suffering for it."
+- "We start using this gem, we're not aware that it's overriding any core ruby functionality and we end up suffering for it"
+
 ## hypothetical situation2:
 - "We're using this gem that we KNOW is overriding core functionality.  Whether we intended to or not, we started interlacing dependencies in our projects.  Now we want to REMOVE this gem."
 
@@ -109,10 +111,11 @@ end
 
 !SLIDE bullets incremental
 
-# best practices, given you're going to do this
+# best practices
+given you're going to do this
 
 - Say you want to define *foo* in *obj*
-- Ruby has a bunch of great methods like object#respond_to?, module#instance_methods, and module#private_instance_methods.
+- Ruby has a bunch of great methods like object#respond_to? and module#instance_methods
 - These can be used to suss out whether obj.foo is already defined.
 - If it is you should not feel comfortable monkeypatching your own foo in.
 - If it is already defined: maybe you'd like to try around alias?
@@ -199,6 +202,25 @@ end
 ```ruby
 String.ancestors
 # => [String, JimmysPalindromeFinder, Comparable, Object, Kernel, BasicObject]
+```
+
+!SLIDE bullets
+
+# source location
+
+- For ruby 1.8, we have a gem: "ruby10_source_location"
+- For ruby 1.9 and after, source location is included.
+
+```ruby
+class String
+  def palindrome?
+    self == self.reverse
+  end
+end
+
+"hello world!".method(:palindrome?).source_location
+# => [string_extension.rb, 3]
+# note this is in the format [__FILE__, __LINE__]
 ```
 
 !SLIDE bullets incremental

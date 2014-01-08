@@ -2,9 +2,10 @@
 
 # eval, instance_eval, module_eval, class_eval
 
-- Evaluate Strings of Ruby code in the context of the receiving object.
+- Evaluate Strings or blocks of Ruby code in the context of the receiving object.
 - You can do just about whatever you want with this.
 - Downsides?
+- Many.
 
 !SLIDE bullets incremental
 # reasons to be wary of the :eval_family

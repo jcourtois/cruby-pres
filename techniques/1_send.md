@@ -26,6 +26,15 @@ class Taxi
   def calculate_fare_for(distance)
     send("#{time_of_day}_rate", distance)
   end
+  def rush_hour_rate
+    # ...
+  end
+  def evening_rate
+    # ...
+  end
+  def afternoon_rate
+    # ...
+  end
 end
 ```
 
@@ -39,6 +48,12 @@ end
 class Image
   def execute_method_sequence methods
     methods.each{ |method| self.send(method) }
+  end
+  def rotate_90
+    # ...
+  end
+  def h_flip
+    # ...
   end
 end
 
@@ -64,3 +79,22 @@ different_kitty = kitty2.execute_method_sequence ['h_flip', 'rotate_90']
 - Difficult to follow the code path; you may end up debugging more often.  :(
 - When :send is invoked with user input, may cause security issues.
 - Difficult to refactor!
+
+!SLIDE bullets incremental
+
+# when should i use/ not use :send?
+
+## ok excuse
+- Only use this if you can't know which method you'd like to call at coding time.  See the Timeout example.
+
+## bad excuses
+
+- Too lazy to type
+- Don't want to call two methods in a row
+
+```ruby
+args = #...
+method_list = ['validate', 'send_email_with']
+method_list.each{ |method| send method, args }
+# :(
+```

@@ -4,8 +4,8 @@
 
 - UNIT TESTING!
 - When metaprogramming, we should test both
-- Our code that is writing code
-- The code that our code writes.
+- Which pieces get changed
+- How they get changed
 - This is very important!
 
 !SLIDE bullets incremental
