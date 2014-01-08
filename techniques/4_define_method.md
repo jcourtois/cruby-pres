@@ -17,6 +17,9 @@ end
 Person.new.say_hello # => "hello"
 ```
 
+For more information on blocks, procs, and lambdas, see:
+http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/
+
 !SLIDE bullets
 
 # anonymous class objects
